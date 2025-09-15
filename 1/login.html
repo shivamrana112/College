@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Open Justice</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="width: 50px; height: 50px; background: #3498db; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-right: 15px;">OU</div>
+                <h1>Open Justice</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="1.html">Home</a></li>
+                    <li><a href="#">Virtual Courtroom</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="sign-up.html" class="create">Register</a></li>
+                    <li><a href="login.html" class="login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="form signin">
+            <h2>Sign In</h2>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <ion-icon name="person-outline"></ion-icon>
+                <span>username</span>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <ion-icon name="lock-closed"></ion-icon>
+                <span>password</span>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Login">
+            </div>
+            <p>Not a member ? <a href="sign-up.html" class="create">Create account</a></p>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

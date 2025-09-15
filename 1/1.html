@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Justice: Virtual Courtroom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div
+                    style="width: 50px; height: 50px; background: #3498db; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-right: 15px;">
+                    OU</div>
+                <h1>Open Justice</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Virtual Courtroom</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="sign-up.html" class="create">Register/Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Digital Courtroom Simulation</h2>
+            <p>An immersive educational experience that brings the courtroom to you. Explore the layout, learn about
+                procedures, and understand the roles of courtroom participants.</p>
+            <a href="#courtroom" class="btn">Explore the Courtroom</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Understanding the Courtroom</h2>
+                <p>The virtual courtroom provides an interactive learning environment for students, educators, and
+                    anyone interested in the justice system.</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-img" style="background-color: #3498db;">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Judicial Process</h3>
+                        <p>Learn about courtroom procedures, rules of evidence, and the stages of a trial from filing to
+                            verdict.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-color: #e74c3c;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Key Participants</h3>
+                        <p>Understand the roles of judges, lawyers, jurors, defendants, and other courtroom personnel.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-color: #2c3e50;">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Legal Principles</h3>
+                        <p>Explore fundamental legal concepts including due process, presumption of innocence, and
+                            burden of proof.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courtroom View Section -->
+    <section id="courtroom" class="courtroom-view">
+        <div class="container">
+            <div class="section-title">
+                <h2>Interactive Courtroom</h2>
+                <p>Click on the hotspots to learn about different areas of the courtroom</p>
+            </div>
+            <div class="courtroom-container">
+                <div class="courtroom-img"
+                    style="height: 400px; background: #5d6d7e; border-radius: 8px; position: relative;">
+                    <div class="hotspot" style="top: 30%; left: 50%;" title="Judge's Bench"></div>
+                    <div class="hotspot" style="top: 60%; left: 30%;" title="Jury Box"></div>
+                    <div class="hotspot" style="top: 60%; left: 70%;" title="Witness Stand"></div>
+                    <div class="hotspot" style="top: 75%; left: 50%;" title="Counsel Tables"></div>
+                    <div class="hotspot" style="top: 85%; left: 20%;" title="Public Gallery"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="complaint">
+        <form id="complaintForm">
+            <h2>Describe the Incident</h2>
+            <textarea id="incidentDescription" rows="5"
+                placeholder="Please describe what happened in detail..."></textarea>
+
+            <label for="crimeCategory">Category (Optional):</label>
+            <select id="crimeCategory" name="crimeCategory">
+                <option value="">-- Please select a category to narrow down analysis --</option>
+
+                <!-- Property Crimes -->
+                <optgroup label="Property-Related Crimes">
+                    <option value="property">Theft, Robbery, or Dacoity</option>
+                </optgroup>
+
+                <!-- Financial Crimes -->
+                <optgroup label="Financial & Fraud Crimes">
+                    <option value="financial">Cheating, Fraud, or Scam</option>
+                </optgroup>
+
+                <!-- Violent Crimes -->
+                <optgroup label="Violent & Physical Crimes">
+                    <option value="violent">Assault, Hurt, or Murder</option>
+                    <option value="violent">Sexual Assault or Rape</option>
+                </optgroup>
+
+                <!-- Other Crimes -->
+                <optgroup label="Other Crimes">
+                    <option value="defamation">Defamation or Character Assassination</option>
+                    <option value="threat">Criminal Intimidation or Threats</option>
+                </optgroup>
+
+            </select>
+
+            <button type="submit">Analyze Complaint</button>
+        </form>
+
+        <div id="resultsSection" style="display:none;">
+            <h3>Legal Analysis Result:</h3>
+            <p><strong>Identified Crime:</strong> <span id="identifiedCrime"></span></p>
+            <p><strong>BNS Section:</strong> <span id="bnsSection"></span></p>
+            <p><strong>Potential Punishment:</strong> <span id="punishment"></span></p>
+            <!-- New line for displaying Constitutional Articles -->
+            <p id="constitutionArticles"></p>
+            <p><strong>Disclaimer:</strong> <span id="disclaimer">This is an AI-based preliminary analysis for informational purposes
+                    only. It is not legal advice. Please consult a qualified lawyer for accurate guidance.</span></p>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>Learning Resources</h2>
+                <p>Supplementary materials to enhance your understanding of the justice system</p>
+            </div>
+            <div class="resource-cards">
+                <div class="resource-card">
+                    <h3>Courtroom Activities</h3>
+                    <ul>
+                        <li>Mock Trial Scenarios</li>
+                        <li>Role-Playing Exercises</li>
+                        <li>Procedure Simulations</li>
+                        <li>Case Studies</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Educational Materials</h3>
+                    <ul>
+                        <li>Glossary of Legal Terms</li>
+                        <li>Courtroom Diagram PDF</li>
+                        <li>Video Tutorials</li>
+                        <li>Reading Lists</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>For Educators</h3>
+                    <ul>
+                        <li>Lesson Plans</li>
+                        <li>Assessment Tools</li>
+                        <li>Curriculum Guides</li>
+                        <li>Classroom Activities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Open Justice</h3>
+                    <p>Making the justice system accessible through education and technology.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Virtual Courtroom</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> sprana12354@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 8849540351</li>
+                        <li><i class="fas fa-map-marker-alt"></i> RV College of Engineering, Bangalore, India</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Open Justice. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hotspot interaction
+        document.querySelectorAll('.hotspot').forEach(hotspot => {
+            hotspot.addEventListener('click', function () {
+                const title = this.getAttribute('title');
+                alert(`You clicked on the ${title}. This would show detailed information in the full implementation.`);
+            });
+        });
+
+        // Simple animation for features
+        document.addEventListener('DOMContentLoaded', function () {
+            const featureCards = document.querySelectorAll('.feature-card');
+
+            featureCards.forEach((card, index) => {
+                // Add delay for staggered animation
+                card.style.animationDelay = `${index * 0.2}s`;
+                card.classList.add('fade-in');
+            });
+        });
+        // Define your BNS database in JavaScript
+        const bnsDatabase = [
+            {
+                id: 1,
+                keywords: ["theft", "stolen", "rob", "take property", "movable property", "belonging", "without consent"],
+                category: "property",
+                bns_section: "303. Theft",
+                crime_name: "Theft",
+                punishment: "Imprisonment of either description for a term which may extend to three years, or with fine, or with both.",
+                severity: "cognizable, non-bailable",
+                constitution_articles: [
+                    "Article 300A: Right to Property (Deprivation of property without authority of law)",
+                    "Article 21: Right to Life and Personal Liberty (Includes right to livelihood and possessions)"
+                ]
+            },
+            {
+                id: 2,
+                keywords: ["robbery", "armed robbery", "loot", "dacoity", "gang robbery", "hold up"],
+                category: "property",
+                bns_section: "305. Robbery | 311. Dacoity",
+                crime_name: "Robbery / Dacoity",
+                punishment: "Robbery: Rigorous imprisonment up to 10 years + fine. Dacoity: Imprisonment for life, or rigorous imprisonment up to 10 years + fine.",
+                severity: "cognizable, non-bailable",
+                constitution_articles: [
+                    "Article 21: Right to Life and Personal Liberty (Threat to life during commission of crime)",
+                    "Article 300A: Right to Property"
+                ]
+            },
+            {
+                id: 3,
+                keywords: ["cheat", "fraud", "deceive", "dishonestly", "delivery property", "scam", "online fraud"],
+                category: "financial",
+                bns_section: "318. Cheating",
+                crime_name: "Cheating",
+                punishment: "Imprisonment for up to 3 years, or with fine, or with both.",
+                severity: "non-cognizable, bailable",
+                constitution_articles: [
+                    "Article 300A: Right to Property (Acquisition of property through deception)",
+                    "Article 19(1)(g): Freedom to practice any profession (If fraud impacts trade/commerce)"
+                ]
+            },
+            {
+                id: 4,
+                keywords: ["hurt", "assault", "beat", "hit", "bodily pain", "attack", "slap", "punch", "kick"],
+                category: "violent",
+                bns_section: "126. Voluntarily causing hurt",
+                crime_name: "Voluntarily Causing Hurt",
+                punishment: "Imprisonment for up to 6 months, or with fine up to ₹5000, or with both.",
+                severity: "cognizable, bailable",
+                constitution_articles: [
+                    "Article 21: Right to Life and Personal Liberty (Right to live with dignity and free from violence)",
+                    "Article 14: Right to Equality (Equal protection of laws for the victim)"
+                ]
+            },
+            {
+                id: 5,
+                keywords: ["grievous hurt", "fracture", "dislocation", "dangerous weapon", "life threatening", "permanent disfigurement"],
+                category: "violent",
+                bns_section: "127. Voluntarily causing grievous hurt",
+                crime_name: "Voluntarily Causing Grievous Hurt",
+                punishment: "Imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
+                severity: "cognizable, non-bailable",
+                constitution_articles: [
+                    "Article 21: Right to Life and Personal Liberty (Serious infringement of bodily integrity and health)"
+                ]
+            },
+            {
+                id: 6,
+                keywords: ["death", "murder", "kill", "homicide", "cause death", "murdered"],
+                category: "violent",
+                bns_section: "103. Murder",
+                crime_name: "Murder",
+                punishment: "Death, or imprisonment for life, and shall also be liable to fine.",
+                severity: "cognizable, non-bailable",
+                constitution_articles: [
+                    "Article 21: Right to Life and Personal Liberty (The most fundamental right, violation of which is punished)",
+                    "Article 14: Right to Equality (The State must protect the victim's right to life equally)"
+                ]
+            },
+            {
+                id: 7,
+                keywords: ["rape", "sexual assault", "molestation", "outraging modesty", "non-consensual", "gangrape"],
+                category: "violent",
+                bns_section: "69. Sexual assault by husband | 63. Rape | 74. Gang rape",
+                crime_name: "Sexual Offences",
+                punishment: "Varies from 2 years to imprisonment for life, or with fine. For gang rape, 20 years to life.",
+                severity: "cognizable, non-bailable",
+                constitution_articles: [
+                    "Article 21: Right to Life and Personal Liberty (Right to privacy, dignity, and reproductive autonomy)",
+                    "Article 14: Right to Equality (Right to equal protection for women)",
+                    "Article 15(3): State can make special laws for women and children (Empowers protective laws)"
+                ]
+            },
+            {
+                id: 8,
+                keywords: ["defamation", "libel", "slander", "ruin reputation", "false statement", "character assassination"],
+                category: "defamation",
+                bns_section: "356. Defamation",
+                crime_name: "Defamation",
+                punishment: "Simple imprisonment for up to two years, or with fine, or with both.",
+                severity: "non-cognizable, bailable",
+                constitution_articles: [
+                    "Article 19(1)(a): Freedom of Speech and Expression (Balanced against the right to reputation)",
+                    "Article 21: Right to Life and Personal Liberty (Right to reputation is a part of personal liberty)"
+                ]
+            },
+            {
+                id: 9,
+                keywords: ["criminal intimidation", "threat", "threaten", "cause alarm", "blackmail", "extort"],
+                category: "threat",
+                bns_section: "351. Criminal intimidation",
+                crime_name: "Criminal Intimidation",
+                punishment: "Imprisonment of either description for a term which may extend to two years, or with fine, or with both.",
+                severity: "non-cognizable, bailable",
+                constitution_articles: [
+                    "Article 19(1)(a): Freedom of Speech and Expression (Does not cover threats which are not protected speech)",
+                    "Article 21: Right to Life and Personal Liberty (Right to live free from fear and mental distress)"
+                ]
+            }
+        ];
+
+        // Rewrite your analysis function in JavaScript
+        function analyzeComplaint(description, category) {
+            let bestMatch = null;
+            let highestScore = 0;
+            const desc = description.toLowerCase();
+
+            for (const crime of bnsDatabase) {
+                if (category && crime.category !== category) continue;
+
+                let score = 0;
+                for (const keyword of crime.keywords) {
+                    if (desc.includes(keyword)) score++;
+                }
+
+                if (score > highestScore) {
+                    highestScore = score;
+                    bestMatch = crime;
+                }
+            }
+            return bestMatch || {
+                error: "No specific BNS section could be identified based on the description.",
+                constitution_articles: ["Article 21: Right to Life and Personal Liberty (The State has a duty to protect all citizens from any crime)"]
+            };
+        }
+
+        // Then call this function directly in your submit handler
+        document.getElementById('complaintForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const description = document.getElementById('incidentDescription').value;
+            const category = document.getElementById('crimeCategory').value;
+
+            const result = analyzeComplaint(description, category);
+
+            // Display the basic results
+            document.getElementById('identifiedCrime').textContent = result.crime_name || 'N/A';
+            document.getElementById('bnsSection').textContent = result.bns_section || 'N/A';
+            document.getElementById('punishment').textContent = result.punishment || 'N/A';
+
+            // Display the Constitutional Articles
+            const constitutionElement = document.getElementById('constitutionArticles');
+            constitutionElement.innerHTML = ''; // Clear previous results
+
+            if (result.constitution_articles) {
+                constitutionElement.innerHTML = '<strong>Constitutional Provisions Engaged:</strong><br>';
+                const articleList = document.createElement('ul');
+                // Add each article as a list item
+                result.constitution_articles.forEach(article => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = article;
+                    articleList.appendChild(listItem);
+                });
+                constitutionElement.appendChild(articleList);
+            }
+
+            document.getElementById('resultsSection').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

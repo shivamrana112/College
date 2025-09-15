@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "keywords": ["theft", "stolen", "rob", "take property", "movable property"],
+        "category": "theft",
+        "bns_section": "Section 303",
+        "crime_name": "Theft",
+        "punishment": "Imprisonment for up to 3 years, or with fine, or with both."
+    },
+    {
+        "id": 2,
+        "keywords": ["hurt", "assault", "beat", "hit", "bodily pain", "attack"],
+        "category": "assault",
+        "bns_section": "Section 126(1)",
+        "crime_name": "Voluntarily causing hurt",
+        "punishment": "Imprisonment for up to 6 months, or with fine of up to ₹5000, or with both."
+    },
+    {
+        "id": 3,
+        "keywords": ["cheat", "fraud", "deceive", "dishonestly", "delivery property", "scam"],
+        "category": "cheating",
+        "bns_section": "Section 318",
+        "crime_name": "Cheating",
+        "punishment": "Imprisonment for up to 3 years, or with fine, or with both."
+    },
+    {
+        "id": 4,
+        "keywords": ["death", "murder", "kill", "homicide", "cause death"],
+        "category": "homicide",
+        "bns_section": "Section 103(1)",
+        "crime_name": "Murder (Subject to exceptions)",
+        "punishment": "Death or Imprisonment for life, and shall also be liable to fine."
+    }
+]
